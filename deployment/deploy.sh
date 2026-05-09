@@ -75,7 +75,7 @@ echo ""
 read -p "   Press ENTER after DNS is configured (wait 5-10 min for propagation)... "
 
 echo -e "${BLUE}Requesting SSL certificate from Let's Encrypt...${NC}"
-sudo certbot certonly --nginx -d sidzy.in -d www.sidzy.in --non-interactive --agree-tos -m webmaster@sidzy.in
+sudo certbot certonly --standalone -d sidzy.in -d www.sidzy.in --non-interactive --agree-tos -m webmaster@sidzy.in --preferred-challenges http
 
 # Step 7: Configure nginx reverse proxy (now that SSL certs exist)
 echo -e "${BLUE}[7/10]${NC} Configuring nginx reverse proxy..."
