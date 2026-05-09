@@ -388,7 +388,7 @@ async function startScreenShare() {
         height: { ideal: 1080 },
         cursor: 'always'
       },
-      audio: false,
+      audio: true,
       selfBrowserSurface: 'exclude',
       surfaceSwitching: 'exclude',
       preferCurrentTab: false
