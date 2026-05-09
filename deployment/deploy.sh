@@ -30,11 +30,21 @@ nvm install 20
 nvm use 20
 node -v && npm -v
 
-# Step 3: Clone repo and install dependencies
+# Step 3: Verify repo and install dependencies
 echo -e "${BLUE}[3/10]${NC} Setting up 3Sync application..."
-cd $HOME
-git clone https://github.com/yourusername/3Sync.git 2>/dev/null || echo "Repo already cloned"
-cd 3Sync
+# Check if we're already in the repo (has deployment/deploy.sh)
+if [ ! -f "deployment/deploy.sh" ]; then
+    # Not in repo, clone it
+    cd $HOME
+    if ! git clone https://github.com/yourusername/3Sync.git; then
+        echo -e "${YELLOW}❌ ERROR: Git URL is placeholder. Update to your actual repo URL in deploy.sh line 37${NC}"
+        exit 1
+    fi
+    cd 3Sync
+else
+    # Already in repo directory, good!
+    echo "Already in 3Sync directory, skipping clone"
+fi
 npm install --production
 
 # Step 4: Create production .env file
@@ -74,7 +84,7 @@ echo ""
 read -p "   Press ENTER after DNS is configured (wait 5-10 min for propagation)... "
 
 echo -e "${BLUE}Getting SSL certificate...${NC}"
-sudo certbot certonly --nginx -d sidzy.in -d www.sidzy.in --non-interactive --agree-tos -m admin@sidzy.in
+sudo certbot certonly --nginx -d sidzy.in -d www.sidzy.in --non-interactive --agree-tos -m webmaster@sidzy.in
 
 # Step 8: Install coturn TURN server
 echo -e "${BLUE}[8/10]${NC} Installing coturn..."
@@ -91,9 +101,9 @@ sudo systemctl daemon-reload
 
 # Step 10: Start all services
 echo -e "${BLUE}[10/10]${NC} Starting all services..."
-sudo systemctl enable --now 3sync
 sudo systemctl enable --now nginx
 sudo systemctl enable --now coturn
+sudo systemctl enable --now 3sync  # Start Node.js app last after other services ready
 
 echo ""
 echo -e "${GREEN}=========================================="
