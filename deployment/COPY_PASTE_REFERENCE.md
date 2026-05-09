@@ -31,7 +31,7 @@ ORIGIN=https://sidzy.in
 JWT_SECRET=xK7mP2q9F0nL8vW5bY3dH6jR1cE4gT9uO2sA7zM5
 
 # Users
-USERS=sandesh:san22,sonali:son27,siddarth:sid06,ishaan:ish11,yashas:yas03
+USERS=sandy:san22,sonzy:son27,sidzy:sid06,ishaan:ish11,yashas:yas03
 
 # TURN Server
 TURN_HOST=sidzy.in

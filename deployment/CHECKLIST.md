@@ -152,7 +152,7 @@ sudo journalctl -u 3sync -n 20
 - [ ] No warnings about security
 
 ### Step 4.4: Test Login
-- [ ] Enter username: **sandesh**
+- [ ] Enter username: **sandy**
 - [ ] Enter password: **san22**
 - [ ] Click "Join Call"
 - [ ] Should see video call interface
@@ -160,7 +160,7 @@ sudo journalctl -u 3sync -n 20
 ### Step 4.5: Test Video Call (2 Users)
 - [ ] Open second browser window (incognito)
 - [ ] Go to **https://sidzy.in**
-- [ ] Login as: **sonali** / **son27**
+- [ ] Login as: **sonzy** / **son27**
 - [ ] Click "Join Call"
 - [ ] In first browser, you should see video from second user
 - [ ] In second browser, you should see video from first user

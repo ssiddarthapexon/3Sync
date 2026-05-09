@@ -70,9 +70,9 @@
 ### 6. **User Management**
 - ✅ **5 new users added**:
   ```
-  sandesh:san22
-  sonali:son27
-  siddarth:sid06
+  sandy:san22
+  sonzy:son27
+  sidzy:sid06
   ishaan:ish11
   yashas:yas03
   ```
@@ -117,9 +117,9 @@
 ```
 Username        Password
 ---------       --------
-sandesh         san22
-sonali          son27
-siddarth        sid06
+sandy           san22
+sonzy           son27
+sidzy           sid06
 ishaan          ish11
 yashas          yas03
 ```

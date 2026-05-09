@@ -165,8 +165,8 @@ Open browser and visit: **https://sidzy.in**
 ### 4.4 Test With Real Users
 1. Open **https://sidzy.in** in two different browsers
 2. Login with test credentials:
-   - sandesh / san22
-   - sonali / son27
+   - sandy / san22
+   - sonzy / son27
 3. Click "Join Call"
 4. Test camera toggle, mic toggle, screen share
 5. Both users should see video feeds (P2P connection established)

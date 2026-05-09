@@ -32,9 +32,9 @@
 ┌──────────┬──────────┐
 │ Username │ Password │
 ├──────────┼──────────┤
-│ sandesh  │ san22    │
-│ sonali   │ son27    │
-│ siddarth │ sid06    │
+│ sandy    │ san22    │
+│ sonzy    │ son27    │
+│ sidzy    │ sid06    │
 │ ishaan   │ ish11    │
 │ yashas   │ yas03    │
 └──────────┴──────────┘
@@ -42,8 +42,8 @@
 
 **Verified in server logs:**
 ```
-[*] Loaded users: sandesh, sonali, siddarth, ishaan, yashas
-👥 Hardcoded users: sandesh, sonali, siddarth, ishaan, yashas
+[*] Loaded users: sandy, sonzy, sidzy, ishaan, yashas
+👥 Hardcoded users: sandy, sonzy, sidzy, ishaan, yashas
 ```
 
 ---
@@ -59,9 +59,9 @@
 
 ## 📋 Test Checklist
 
-- [ ] Test login with sandesh:san22
-- [ ] Test login with sonali:son27
-- [ ] Test login with siddarth:sid06
+- [ ] Test login with sandy:san22
+- [ ] Test login with sonzy:son27
+- [ ] Test login with sidzy:sid06
 - [ ] Test login with ishaan:ish11
 - [ ] Test login with yashas:yas03
 - [ ] Test 2-user video call
@@ -80,7 +80,7 @@
 │                                                  │
 │  Browser 1          Browser 2       Browser 3   │
 │  ┌─────────┐        ┌─────────┐     ┌────────┐ │
-│  │ Sandesh │───────│ Sonali  │────│ Siddarth│ │
+│  │ Sandy    │───────│ Sonzy   │────│ Sidzy    │ │
 │  └─────────┘        └─────────┘     └────────┘ │
 │       │                 │                 │     │
 │       └─────────────────┼─────────────────┘     │

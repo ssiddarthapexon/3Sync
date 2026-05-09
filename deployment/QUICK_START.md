@@ -5,8 +5,8 @@
 ```
 Domain:              sidzy.in (hosted on Cloudflare)
 App URL:             https://sidzy.in
-Test User 1:         sandesh / san22
-Test User 2:         sonali / son27
+Test User 1:         sandy / san22
+Test User 2:         sonzy / son27
 ```
 
 ---
@@ -108,13 +108,13 @@ sudo systemctl status 3sync nginx coturn
 # Should see: 3Sync Login page + green lock icon
 
 # Test login
-# Username: sandesh
+# Username: sandy
 # Password: san22
 # Click: Join Call
 
 # Test video (2 browsers)
-# Browser 1: sandesh login
-# Browser 2: sonali login
+# Browser 1: sandy login
+# Browser 2: sonzy login
 # Both should see each other's video
 ```
 
@@ -191,7 +191,7 @@ sudo systemctl restart 3sync
 ✅ **SSL**: Let's Encrypt (auto-renewing)
 ✅ **TURN Server**: coturn (NAT fallback)
 ✅ **P2P**: WebRTC full mesh topology
-✅ **Users**: 5 configured (sandesh, sonali, siddarth, ishaan, yashas)
+✅ **Users**: 5 configured (sandy, sonzy, sidzy, ishaan, yashas)
 
 ---
 

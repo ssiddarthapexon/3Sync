@@ -74,7 +74,7 @@ All deployment files are ready in `/deployment/` folder. Here's what you have:
 ### Phase 4: Verification (10 min)
 1. Check services: `sudo systemctl status 3sync nginx coturn`
 2. Test HTTPS: Open browser → https://sidzy.in
-3. Login test: Use sandesh/san22
+3. Login test: Use sandy/san22
 4. Video call test: 2 browsers, should see each other
 
 **Troubleshooting**: DEPLOYMENT.md → "Troubleshooting" section
@@ -161,8 +161,8 @@ coturn (TURN server on port 3478, 5349)
 
 After deployment is complete, you should:
 - ✅ Visit https://sidzy.in → See login page with green lock
-- ✅ Login with sandesh/san22 → See call interface
-- ✅ Open 2nd browser, login as sonali/son27 → See video from each other
+- ✅ Login with sandy/san22 → See call interface
+- ✅ Open 2nd browser, login as sonzy/son27 → See video from each other
 - ✅ Test screen share → Both see screen in main area
 - ✅ Test 4-5 hour call → No disconnects, proper cleanup
 - ✅ Check logs → No critical errors, proper Socket.io heartbeat
