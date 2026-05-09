@@ -1,0 +1,647 @@
+/* ============================================
+   BASE STYLES — APPLE-INSPIRED
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #1d1d1f;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   LOGIN PAGE — APPLE STYLE
+   ============================================ */
+
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.login-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 48px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.login-card h1 {
+  font-size: 32px;
+  margin-bottom: 36px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #1d1d1f;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6f6f77;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #e5e5e7;
+  background-color: #f9f9fb;
+  color: #1d1d1f;
+  border-radius: 12px;
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #0a84ff;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 2px rgba(10, 132, 255, 0.1);
+}
+
+.form-group input::placeholder {
+  color: #a1a1a6;
+}
+
+.error-message {
+  color: #ff3b30;
+  font-size: 13px;
+  margin-bottom: 20px;
+  text-align: center;
+  min-height: 18px;
+  font-weight: 500;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: -0.3px;
+}
+
+.btn-primary {
+  width: 100%;
+  background: linear-gradient(135deg, #0a84ff 0%, #0071e3 100%);
+  color: white;
+  margin-top: 8px;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(10, 132, 255, 0.3);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  background: #e5e5e7;
+  color: #a1a1a6;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   CALL PAGE — APPLE STYLE
+   ============================================ */
+
+.call-page {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: linear-gradient(180deg, #f5f7fa 0%, #e8ecf1 100%);
+  height: 100vh;
+}
+
+.error-banner {
+  background: linear-gradient(90deg, #ff3b30, #ff453a);
+  color: white;
+  padding: 14px 16px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(255, 59, 48, 0.2);
+}
+
+/* ============================================
+   VIDEO GRID
+   ============================================ */
+
+/* ============================================
+   CALL LAYOUT — FIXED SCREEN SHARE + CAMERA SIDEBAR
+   ============================================ */
+
+.call-container {
+  flex: 1;
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  overflow: hidden;
+}
+
+/* Left side: Screen share area (fixed, always visible) */
+.screen-share-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  min-height: 0;
+}
+
+.screen-share-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #86868b;
+}
+
+.placeholder-content {
+  text-align: center;
+}
+
+.placeholder-icon {
+  font-size: 64px;
+  display: block;
+  margin-bottom: 16px;
+  opacity: 0.3;
+}
+
+.screen-share-placeholder p {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  opacity: 0.5;
+  letter-spacing: -0.3px;
+}
+
+#screen-share-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+}
+
+/* Right side: Camera feeds sidebar */
+.camera-sidebar {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 4px;
+}
+
+.camera-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.camera-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.camera-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.camera-sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.video-tile {
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  flex-shrink: 0;
+}
+
+.video-tile:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.video-tile video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-tile.local video {
+  transform: scaleX(-1);
+}
+
+.video-tile.local {
+  background: linear-gradient(135deg, #f5f7fa, #e8ecf1);
+}
+
+.name-label {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  max-width: calc(100% - 24px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: -0.2px;
+}
+
+.muted-indicator {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 11px;
+}
+
+/* ============================================
+   CONTROLS — APPLE STYLE
+   ============================================ */
+
+.controls {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(24px);
+  padding: 14px 28px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.btn-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  width: 47px;
+  height: 47px;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  background: #f5f5f7;
+  color: #1d1d1f;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: -0.2px;
+}
+
+.btn-control:hover {
+  background: #efefef;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-control:active {
+  transform: translateY(0);
+}
+
+.btn-control .icon {
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  height: 18px;
+}
+
+.btn-control:hover .icon {
+  transform: scale(1.08);
+}
+
+.btn-control .label {
+  font-size: 7px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+/* Button states with Apple colors */
+
+/* Camera button states */
+.btn-camera {
+  background: linear-gradient(135deg, rgba(10, 132, 255, 0.1), rgba(10, 132, 255, 0.05));
+}
+
+.btn-camera:hover {
+  background: linear-gradient(135deg, rgba(10, 132, 255, 0.2), rgba(10, 132, 255, 0.1));
+}
+
+.btn-camera.active {
+  color: #0a84ff;
+  background: linear-gradient(135deg, rgba(10, 132, 255, 0.15), rgba(10, 132, 255, 0.08));
+}
+
+.btn-camera.inactive {
+  color: #ff3b30;
+  background: linear-gradient(135deg, rgba(255, 59, 48, 0.15), rgba(255, 59, 48, 0.08));
+}
+
+/* Mic button states */
+.btn-mic {
+  background: linear-gradient(135deg, rgba(10, 132, 255, 0.1), rgba(10, 132, 255, 0.05));
+}
+
+.btn-mic:hover {
+  background: linear-gradient(135deg, rgba(10, 132, 255, 0.2), rgba(10, 132, 255, 0.1));
+}
+
+.btn-mic.active {
+  color: #0a84ff;
+  background: linear-gradient(135deg, rgba(10, 132, 255, 0.15), rgba(10, 132, 255, 0.08));
+}
+
+.btn-mic.inactive {
+  color: #ff3b30;
+  background: linear-gradient(135deg, rgba(255, 59, 48, 0.15), rgba(255, 59, 48, 0.08));
+}
+
+/* Share button states */
+.btn-share {
+  background: linear-gradient(135deg, rgba(52, 199, 89, 0.1), rgba(52, 199, 89, 0.05));
+  color: #34c759;
+}
+
+.btn-share:hover {
+  background: linear-gradient(135deg, rgba(52, 199, 89, 0.2), rgba(52, 199, 89, 0.1));
+}
+
+.btn-share.active {
+  color: #ff9500;
+  background: linear-gradient(135deg, rgba(255, 149, 0, 0.15), rgba(255, 149, 0, 0.08));
+  animation: pulse-share 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-share {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Leave button (always red) */
+.btn-leave {
+  color: #ff3b30;
+  background: linear-gradient(135deg, rgba(255, 59, 48, 0.15), rgba(255, 59, 48, 0.08));
+}
+
+.btn-leave:hover {
+  background: linear-gradient(135deg, rgba(255, 59, 48, 0.25), rgba(255, 59, 48, 0.15));
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .login-card {
+    padding: 36px;
+    max-width: 90%;
+  }
+
+  .login-card h1 {
+    font-size: 28px;
+    margin-bottom: 28px;
+  }
+
+  .call-container {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .screen-share-container {
+    flex: 1;
+    min-height: 300px;
+  }
+
+  .camera-sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-height: 160px;
+  }
+
+  .video-tile {
+    min-width: 200px;
+  }
+
+  .controls {
+    gap: 6px;
+    padding: 12px 20px;
+    bottom: 16px;
+  }
+
+  .btn-control {
+    width: 41px;
+    height: 41px;
+  }
+
+  .btn-control .icon {
+    font-size: 15px;
+  }
+
+  .btn-control .label {
+    font-size: 7px;
+  }
+  }
+
+  .btn-control {
+    width: 43px;
+    height: 43px;
+  }
+
+  .btn-control .icon {
+    font-size: 16px;
+  }
+
+  .btn-control .label {
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 28px 24px;
+    border-radius: 20px;
+  }
+
+  .call-container {
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .screen-share-container {
+    flex: 1;
+    min-height: 250px;
+    border-radius: 16px;
+  }
+
+  .camera-sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-height: 140px;
+    gap: 8px;
+  }
+
+  .video-tile {
+    min-width: 160px;
+    border-radius: 12px;
+  }
+
+  .controls {
+    width: calc(100vw - 24px);
+    max-width: none;
+    gap: 10px;
+    padding: 10px 12px;
+  }
+
+  .btn-control {
+    width: 37px;
+    height: 37px;
+    font-size: 10px;
+    border-radius: 9px;
+  }
+
+  .btn-control .icon {
+    font-size: 20px;
+  }
+}
+
+/* ============================================
+   ANIMATIONS & TRANSITIONS
+   ============================================ */
+
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .video-tile {
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .btn-control {
+    transition: all 0.2s ease;
+  }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(135deg, #1d1d1f 0%, #424245 100%);
+    color: #f5f5f7;
+  }
+
+  .login-card {
+    background: rgba(30, 30, 32, 0.95);
+  }
+
+  .login-card h1 {
+    color: #f5f5f7;
+  }
+
+  .form-group input {
+    background-color: #3a3a3f;
+    color: #f5f5f7;
+    border-color: #424245;
+  }
+
+  .form-group input:focus {
+    border-color: #0a84ff;
+    background-color: #424245;
+  }
+
+  .video-tile {
+    background: rgba(60, 60, 67, 0.8);
+  }
+
+  .video-tile.local {
+    background: linear-gradient(135deg, #1d1d1f, #3a3a3f);
+  }
+
+  .controls {
+    background: rgba(30, 30, 32, 0.88);
+  }
+
+  .btn-control {
+    background: #3a3a3f;
+  }
+
+  .btn-control:hover {
+    background: #424245;
+  }
+}
+

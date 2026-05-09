@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3Sync</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="call-page">
+  <div id="error-banner" class="error-banner" style="display: none;"></div>
+  
+  <div class="call-container">
+    <!-- Fixed screen share area (left side, always visible) -->
+    <div id="screen-share-container" class="screen-share-container">
+      <div id="screen-share-placeholder" class="screen-share-placeholder">
+        <div class="placeholder-content">
+          <span class="placeholder-icon">≣</span>
+          <p>No one is sharing</p>
+        </div>
+      </div>
+      <video id="screen-share-video" autoplay playsinline muted style="display: none;"></video>
+    </div>
+    
+    <!-- Camera feeds sidebar (right side) -->
+    <div id="camera-sidebar" class="camera-sidebar">
+      <!-- Camera tiles will be added here -->
+    </div>
+  </div>
+
+  <div id="controls" class="controls">
+    <button id="btn-camera" class="btn btn-control btn-camera active" title="Toggle Camera">
+      <span class="icon">◉</span>
+      <span class="label">Camera</span>
+    </button>
+    <button id="btn-mic" class="btn btn-control btn-mic active" title="Toggle Mic">
+      <span class="icon">⊙</span>
+      <span class="label">Mic</span>
+    </button>
+    <button id="btn-share" class="btn btn-control btn-share" title="Share Screen">
+      <span class="icon">≣</span>
+      <span class="label">Share</span>
+    </button>
+    <button id="btn-leave" class="btn btn-control btn-leave" title="Leave Call">
+      <span class="icon">⊗</span>
+      <span class="label">Leave</span>
+    </button>
+  </div>
+
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>

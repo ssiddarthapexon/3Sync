@@ -1,0 +1,22 @@
+[Unit]
+Description=3Sync - WebRTC Video Call App
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/3Sync
+EnvironmentFile=/home/ubuntu/3Sync/.env
+ExecStart=/home/ubuntu/.nvm/versions/node/v20.10.0/bin/node server.js
+
+# Auto-restart on failure
+Restart=always
+RestartSec=3
+
+# Security
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=3sync
+
+[Install]
+WantedBy=multi-user.target
