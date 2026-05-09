@@ -7,8 +7,8 @@ Type=simple
 User=ubuntu
 WorkingDirectory=/home/ubuntu/3Sync
 EnvironmentFile=/home/ubuntu/3Sync/.env
-# Use node directly from PATH (installed via nvm as root)
-ExecStart=/usr/local/bin/node server.js
+# Use node from root's nvm installation (installed with sudo)
+ExecStart=/root/.nvm/versions/node/v20.20.2/bin/node server.js
 
 # Auto-restart on failure
 Restart=always
