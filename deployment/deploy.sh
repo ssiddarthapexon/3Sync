@@ -58,21 +58,12 @@ if [ ! -f .env ]; then
     exit 1
 fi
 
-# Step 5: Install nginx
-echo -e "${BLUE}[5/10]${NC} Installing nginx..."
-sudo apt-get install -y nginx
+# Step 5: Install nginx and Certbot first (before configuring)
+echo -e "${BLUE}[5/10]${NC} Installing nginx and Certbot..."
+sudo apt-get install -y nginx certbot python3-certbot-nginx
 
-# Step 6: Configure nginx reverse proxy
-echo -e "${BLUE}[6/10]${NC} Configuring nginx..."
-sudo cp deployment/nginx.conf /etc/nginx/sites-available/3sync
-sudo rm -f /etc/nginx/sites-enabled/default
-sudo ln -sf /etc/nginx/sites-available/3sync /etc/nginx/sites-enabled/3sync
-sudo nginx -t
-echo -e "${GREEN}✓ nginx configured${NC}"
-
-# Step 7: Install Certbot and get Let's Encrypt SSL
-echo -e "${BLUE}[7/10]${NC} Installing Certbot for SSL..."
-sudo apt-get install -y certbot python3-certbot-nginx
+# Step 6: Get Let's Encrypt SSL certificate
+echo -e "${BLUE}[6/10]${NC} Getting Let's Encrypt SSL Certificate..."
 
 echo -e "${YELLOW}⚠️  WAIT:${NC}"
 echo "   Before proceeding, ensure DNS records are set:"
@@ -83,8 +74,17 @@ echo "   - Proxy Status: DNS Only (Cloudflare)"
 echo ""
 read -p "   Press ENTER after DNS is configured (wait 5-10 min for propagation)... "
 
-echo -e "${BLUE}Getting SSL certificate...${NC}"
+echo -e "${BLUE}Requesting SSL certificate from Let's Encrypt...${NC}"
 sudo certbot certonly --nginx -d sidzy.in -d www.sidzy.in --non-interactive --agree-tos -m webmaster@sidzy.in
+
+# Step 7: Configure nginx reverse proxy (now that SSL certs exist)
+echo -e "${BLUE}[7/10]${NC} Configuring nginx reverse proxy..."
+sudo cp deployment/nginx.conf /etc/nginx/sites-available/3sync
+sudo rm -f /etc/nginx/sites-enabled/default
+sudo ln -sf /etc/nginx/sites-available/3sync /etc/nginx/sites-enabled/3sync
+sudo nginx -t
+echo -e "${GREEN}✓ nginx configured and validated${NC}"
+sudo systemctl restart nginx
 
 # Step 8: Install coturn TURN server
 echo -e "${BLUE}[8/10]${NC} Installing coturn..."
