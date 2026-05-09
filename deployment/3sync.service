@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-User=ubuntu
+User=root
 WorkingDirectory=/home/ubuntu/3Sync
 EnvironmentFile=/home/ubuntu/3Sync/.env
 # Use node from root's nvm installation (installed with sudo)
