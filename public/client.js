@@ -41,7 +41,11 @@ async function init() {
   try {
     localStream = await navigator.mediaDevices.getUserMedia({
       video: { width: { ideal: 1280 }, height: { ideal: 720 }, frameRate: { ideal: 30 } },
-      audio: true
+      audio: {
+        echoCancellation: true,
+        noiseSuppression: true,
+        autoGainControl: false
+      }
     });
     addVideoTile(null, localUsername, true, localStream);
   } catch (err) {
@@ -388,7 +392,11 @@ async function startScreenShare() {
         height: { ideal: 1080 },
         cursor: 'always'
       },
-      audio: true,
+      audio: {
+        echoCancellation: false,
+        noiseSuppression: false,
+        autoGainControl: false
+      },
       selfBrowserSurface: 'exclude',
       surfaceSwitching: 'exclude',
       preferCurrentTab: false
